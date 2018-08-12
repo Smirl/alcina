@@ -5,6 +5,7 @@ theme = "massively"
 
 [params]
     custom_css = ["css/overrides.css"]
+    favicon = "images/favicon.ico"
 
 [params.posts]
     foldername = "post"
