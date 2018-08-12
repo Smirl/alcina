@@ -1,11 +1,11 @@
 baseURL = "https://alcinaengineering.co.uk/"
 languageCode = "en-gb"
-title = "Alcina Engineering"
+title = "Alcina Engineering Limited"
 theme = "massively"
 
 [params]
-    custom_css = ["css/overrides.css"]
-    favicon = "images/favicon.ico"
+    custom_css = ["/css/overrides.css"]
+    favicon = "/images/favicon.ico"
 
 [params.posts]
     foldername = "post"

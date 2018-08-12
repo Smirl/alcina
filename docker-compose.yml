@@ -3,7 +3,7 @@
 version: '3.1'
 services:
   alcina:
-    image: registry.smirlwebs.com/smirl/alcina:2.0.0
+    image: registry.smirlwebs.com/smirl/alcina:2.0.3
     environment:
       API_KEY: 'c312f9639417764ef437fed52eb4a402'
       AMPLIFY_IMAGENAME: 'alcinaengineering'
