@@ -1,0 +1,10 @@
+# contactformaction: 'https://formspree.io/ajwilly19@gmail.com'
+contactformaction: 'https://formspree.io/smirlie@gmail.com'
+
+address:
+- line: '1234 Somewhere Road #87257'
+- line: 'Nashville, TN 00000-0000'
+
+phone: '+44 7919 411211'
+
+email: 'ajwilly19@gmail.com'

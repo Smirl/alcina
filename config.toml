@@ -1,0 +1,25 @@
+baseURL = "https://alcinaengineering.co.uk/"
+languageCode = "en-gb"
+title = "Alcina Engineering"
+theme = "massively"
+
+[params]
+    custom_css = ["css/overrides.css"]
+
+[params.posts]
+    foldername = "post"
+    pagesize = "6"
+    featuredpost = "false"
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "home"
+    url = "/"
+    weight = -100
+
+  [[menu.main]]
+    identifier = "contact"
+    name = "contact"
+    url = "/#footer"
+    weight = 100
