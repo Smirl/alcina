@@ -3,7 +3,7 @@
 version: '3.1'
 services:
   alcina:
-    image: alcinaengineering.co.uk:5000/smirl/alcina:latest
+    image: registry.smirlwebs.com/smirl/alcina:1.0.0
     environment:
       #VIRTUAL_HOST: 'alcinaengineering.co.uk,www.alcinaengineering.co.uk'
       #LETSENCRYPT_HOST: 'alcinaengineering.co.uk,www.alcinaengineering.co.uk'
