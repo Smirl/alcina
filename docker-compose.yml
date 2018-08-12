@@ -5,9 +5,6 @@ services:
   alcina:
     image: registry.smirlwebs.com/smirl/alcina:1.0.0
     environment:
-      #VIRTUAL_HOST: 'alcinaengineering.co.uk,www.alcinaengineering.co.uk'
-      #LETSENCRYPT_HOST: 'alcinaengineering.co.uk,www.alcinaengineering.co.uk'
-      #LETSENCRYPT_EMAIL: 'smirlie@googlemail.com'
       API_KEY: 'c312f9639417764ef437fed52eb4a402'
       AMPLIFY_IMAGENAME: 'alcinaengineering'
     networks:
@@ -28,5 +25,3 @@ services:
 networks:
   proxy:
     external: true
-
-
