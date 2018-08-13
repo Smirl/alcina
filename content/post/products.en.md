@@ -6,15 +6,18 @@ menu:
     weight: 2
 image: "images/image001.jpg"
 disableComments: false
-description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa libero magni ipsa optio a, voluptate pariatur delectus, neque aspernatur iusto eos minus obcaecati similique, nobis earum quae sequi repudiandae explicabo."
+description: "Take a look at some examples or our work"
 ---
 
+Here are a few samples of work we have created for our clients.
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa libero
-magni ipsa optio a, voluptate pariatur delectus, neque aspernatur iusto
-eos minus obcaecati similique, nobis earum quae sequi repudiandae
-explicabo.
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, velit
-sit eligendi, perspiciatis alias cumque nemo id nihil voluptas! Numquam
-fugit, doloremque cumque aut veritatis ex explicabo, sit hic distinctio.
+<!-- <div class="box alt">
+	<div class="row gtr-50 gtr-uniform">
+		<div class="col-6">
+			<span class="image fit">
+				<img src="/images/images" alt="">
+			</span>
+		</div>
+	</div>
+</div>
+ -->
