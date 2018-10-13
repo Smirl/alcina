@@ -2,6 +2,7 @@ baseURL = "https://alcinaengineering.co.uk/"
 languageCode = "en-gb"
 title = "Alcina Engineering Limited"
 theme = "massively"
+googleanalytics = "UA-5357036-9"
 
 [params]
     custom_css = ["/css/overrides.css"]
