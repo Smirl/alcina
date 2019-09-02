@@ -19,3 +19,5 @@ fields:
 - type: textarea
   name: description
   label: description
+pages:
+- content/post/about.en.md

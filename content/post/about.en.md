@@ -1,15 +1,15 @@
 ---
-title: "About"
+title: About
 date: false
-menu: 
+image: "/images/image002.jpg"
+disableComments: false
+description: Press Tool Making, Welding, Fabrication, CNC Wire Erosion, Machining,
+  Pressbrake, Hand & Power Presswork to 100tons..
+menu:
   main:
     weight: 1
-image: /images/image002.jpg
-disableComments: false
-description: "Press Tool Making, Welding, Fabrication, CNC Wire Erosion, Machining, Pressbrake, Hand & Power Presswork to 100tons.."
+
 ---
-
-
 <span class="image left"><img src="/images/image002.jpg" alt="New Location" /></span>
 ## New location at Wharton Street
 We have recently moved from Reddings Lane to our new location.
@@ -41,4 +41,4 @@ tooling or refurb/repair/regrind.
 **Thursday**	07:30 - 16:30  
 **Friday**		07:30 - 13:30  
 **Saturday**	CLOSED  
-**Sunday**		CLOSED  
+**Sunday**		CLOSED
