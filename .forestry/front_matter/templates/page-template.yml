@@ -5,19 +5,21 @@ fields:
 - type: text
   name: title
   label: title
+- type: textarea
+  name: description
+  label: description
+- type: file
+  name: image
+  label: image
 - type: boolean
   name: date
   label: date
   default: false
   hidden: true
-- type: file
-  name: image
-  label: image
 - type: boolean
   name: disableComments
   label: disableComments
-- type: textarea
-  name: description
-  label: description
+  hidden: true
+  default: true
 pages:
 - content/post/about.en.md
