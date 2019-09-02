@@ -8,6 +8,8 @@ fields:
 - type: boolean
   name: date
   label: date
+  default: false
+  hidden: true
 - type: file
   name: image
   label: image
