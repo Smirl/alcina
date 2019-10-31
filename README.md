@@ -32,6 +32,7 @@ There are a few secrets setup for travis ci. `deploy/kubeconfig.enc` checked in
 to the repo, however it's unencrypted form `deploy/kubeconfig` is not. This
 can be recreated with:
 
+    kubectl config view --minify --raw -o json | jq -r '.clusters[0].cluster."certificate-authority-data"' | base64 -D > deploy/ca.crt
     kubectl config set-cluster travis --server=XXXX --certificate-authority=./deploy/ca.crt --embed-certs
     kubectl config set-credentials travis --token XXXXXX
     kubectl config set-context travis --cluster=travis --user=travis --namespace alcinaengineering
