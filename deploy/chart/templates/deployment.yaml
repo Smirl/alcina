@@ -1,0 +1,37 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alcinaengineering
+  namespace: alcinaengineering
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: alcinaengineering
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: alcinaengineering
+    spec:
+      containers:
+      - image: "registry.smirlwebs.com/smirl/alcina:{{ .Values.version }}"
+        imagePullPolicy: Always
+        name: alcinaengineering
+        ports:
+        - containerPort: 80
+        env:
+        - name: API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: amplify
+              key: api_key
+        - name: AMPLIFY_IMAGENAME
+          value: 'alcinaengineering'
+      imagePullSecrets:
+      - name: registry.smirlwebs.com

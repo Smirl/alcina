@@ -1,0 +1,28 @@
+sudo: required
+language: minimal
+env:
+  global:
+  - VERSION="1.0.$TRAVIS_BUILD_NUMBER"
+  - KUBECONFIG="deploy/kubeconfig"
+  - secure: PcJrxmodvvhzyyPKmE7x7u8wr9Cg7QAzigaj62u7R58PTweqdrYRocWVbhbFYR3KIJKC3QeNWhpoQ90KvIOD+saNXysSdrjlF7FDSoe51ndINii8xHbSC89nme4qm1jLFBJsnUHLyEVKgFNSzaAoY1leBl30OTHSAq81XVraKuR8hFpS+h0m10jMU+AEQv7zF3GWqH6/Gbc5+RrKFxfi0lXWEH2IAgXqsxYtCaTmxuS6xE9mxQR4C7QDLVyskvqMvLikDXG2rBTXd/O9SyAWNS0Jnglm+ma482BdbtqLtAC5Xh0ijTv41ERghmy8a3e4jJkhuEy/87Hgbqbmvv1pW87wGGzJqQKeSSrGehMM4qPrtC476Rz3dGnu8fDaSTUYaIo82IcRjduttEvVKnFGeOq6isYzOzUYbVDCZgKIM65AecWeqkTt/Cg/2FkxwrbaSXnXoMzdq6OYsx2tdWbP2ZJvKrchCOjlcdY4r80UjzYIdMTpwhK6EOLZ9Njz2xMlxPxMH1iYVe0W3KUaGrwNBWtvyV9vXu5wWZosUxaZqdZuE1Y562sfE48Rf8blmpEXYkwBMNuC6YYk/oqNJkVMCxu9frrc4BSfAATaP7Hz6lCLjrrqnBgHJ6lRozg9gJ9Lg+EQdwbE5KMLHY6c5RBnikVsmGlUqiSzvSZWGFKZmYg=
+services:
+- docker
+before_install:
+- openssl aes-256-cbc -K $encrypted_c6166e54b638_key -iv $encrypted_c6166e54b638_iv
+  -in deploy/kubeconfig.enc -out deploy/kubeconfig -d
+install:
+- curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/v1.15.3/bin/linux/amd64/kubectl
+  && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
+- curl https://get.helm.sh/helm-v2.14.3-linux-amd64.tar.gz | tar -xvz && sudo mv linux-amd64/helm
+  /usr/local/bin/
+script:
+- docker build -t registry.smirlwebs.com/smirl/alcina:$VERSION .
+after_success:
+- echo "$DOCKER_PASSWORD" | docker login -u smirl --password-stdin registry.smirlwebs.com
+- docker push registry.smirlwebs.com/smirl/alcina:$VERSION
+deploy:
+  provider: script
+  script: bash deploy/deploy.sh
+  skip_cleanup: true
+  on:
+    branch: master
