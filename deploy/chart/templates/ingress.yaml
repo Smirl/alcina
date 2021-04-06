@@ -1,0 +1,31 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: alcinaengineering
+  namespace: alcinaengineering
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    certmanager.k8s.io/cluster-issuer: "letsencrypt-prod"
+    certmanager.k8s.io/acme-challenge-type: http01
+spec:
+  tls:
+  - hosts:
+    - alcinaengineering.com
+    - www.alcinaengineering.com
+    secretName: alcinaengineering-tls
+  rules:
+  - host: alcinaengineering.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: alcinaengineering
+          servicePort: 80
+  - host: www.alcinaengineering.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: alcinaengineering
+          servicePort: 80
