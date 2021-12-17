@@ -1,6 +1,8 @@
-FROM registry.smirlwebs.com/smirl/nginx-amplify:latest
-ADD https://github.com/gohugoio/hugo/releases/download/v0.46/hugo_0.46_Linux-64bit.deb /tmp/hugo.deb
-COPY . /opt/alcina
-RUN dpkg -i /tmp/hugo.deb \
-    && rm /tmp/hugo.deb \
-    && hugo -s /opt/alcina -d /usr/share/nginx/html  --cleanDestinationDir
+FROM nginxinc/amplify-agent:1.4.1-1 as build
+COPY . /opt/code
+RUN wget -O hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.57.2/hugo_0.57.2_Linux-64bit.tar.gz && \
+    tar -xvf hugo.tar.gz && \
+    ./hugo -s /opt/code --cleanDestinationDir --minify
+
+FROM nginxinc/amplify-agent:1.4.1-1
+COPY --from=build /opt/code/public /usr/share/nginx/html
