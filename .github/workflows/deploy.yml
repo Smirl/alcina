@@ -76,4 +76,4 @@ jobs:
         run: helm repo add mvisonneau https://charts.visonneau.fr/
 
       - name: Deploy
-        run: helm upgrade --install alcinaengineering mvisonneau/generic-app --version 0.0.11 --namespace alcinaengineering -f deploy/values.yaml --set pods.image.tag=$GIT_TAG_NAME
+        run: helm upgrade --install alcinaengineering mvisonneau/generic-app --version 0.0.13 --namespace alcinaengineering -f deploy/values.yaml --set pods.image.tag=$GIT_TAG_NAME
